@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense and Income Tracker</title>
+    <link rel="stylesheet" href="tracker.css" />
+  </head>
+  <body>
+    <div class="financial-tracker">
+      <button id="resetBtn" class="reset-btn">🔄 Reset All</button>
+
+      <div class="tracker-header">
+        <h1>Financial Tracker</h1>
+        <div id="totalBalance" class="balance"></div>
+      </div>
+
+      <form id="transactionForm" class="transaction-form">
+        <div class="form-row">
+          <input
+            type="text"
+            id="description"
+            placeholder="Transaction Description"
+            required
+          />
+          <input
+            type="number"
+            id="amount"
+            placeholder="Amount"
+            step="0.01"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <select id="type">
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+          <button type="submit" class="add-transaction-btn">
+            Add Transaction
+          </button>
+        </div>
+      </form>
+
+      <div class="financial-summary">
+        <div class="summary-card income-card">
+          <h3>Total Income</h3>
+          <div id="totalIncome" class="amount">$0.00</div>
+        </div>
+        <div class="summary-card expense-card">
+          <h3>Total Expenses</h3>
+          <div id="totalExpenses" class="amount">$0.00</div>
+        </div>
+        <div class="summary-card balance-card">
+          <h3>Net Balance</h3>
+          <div id="netBalance" class="amount">$0.00</div>
+        </div>
+      </div>
+
+      <div class="transactions-list" id="transactionsList">
+        <h3>Transaction History</h3>
+      </div>
+    </div>
+  </body>
+  <script src="tracker.js"></script>
+</html>
